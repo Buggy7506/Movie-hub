@@ -37,3 +37,7 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')  # ✅ renders your homepage template
