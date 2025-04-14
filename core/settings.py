@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-yj*re#i7cpl!-ccu#w6mqib)x_w5f(^*87_l^x9dyumz0(wu_w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['movie-hub-te7a.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['movie-hub-te7a.onrender.com', '127.0.0.1', 'localhost', '*']
 
 
 # Application definition
