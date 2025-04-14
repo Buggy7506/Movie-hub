@@ -7,6 +7,9 @@
     <h1>Welcome to Movie Hub</h1>
     {% for movie in movies %}
         <div style="margin-bottom: 20px;">
+            {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
             <h2>{{ movie.title }}</h2>
             <img src="{{ movie.poster.url }}" width="150" />
             <p>{{ movie.description|slice:":150" }}...</p>

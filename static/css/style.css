@@ -1,0 +1,75 @@
+/* Reset some defaults */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #292929;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff4b2b;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #000;
+}
+
+/* Movie cards */
+.movie-card {
+    background: #292929;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+}
+
+.movie-card:hover {
+    background: #333;
+}
+
+.movie-title {
+    font-size: 1.5rem;
+    color: #ff4b2b;
+}
+
+.movie-description {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #888;
+}

@@ -30,7 +30,6 @@ DEBUG = False
 ALLOWED_HOSTS = ['movie-hub-te7a.onrender.com', '127.0.0.1', 'localhost']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -126,7 +125,6 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
