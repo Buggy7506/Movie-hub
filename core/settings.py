@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['movie-hub-te7a.onrender.com']
 
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 import os
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
