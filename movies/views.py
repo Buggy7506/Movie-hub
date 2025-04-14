@@ -3,16 +3,20 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render
 from .models import Movie
+from rest_framework import viewsets
+from .models import Movie
+from .serializers import MovieSerializer
+from django.shortcuts import render
+from django.http import JsonResponse
+from .models import Genre, Movie
+from django.db.models import Count
+from django.http import HttpResponse
 
 def home(request):
     movies = Movie.objects.all()
     return render(request, 'home.html', {'movies': movies})
 
 
-from django.shortcuts import render
-from django.http import JsonResponse
-from .models import Genre, Movie
-from django.db.models import Count
 
 def dashboard_page(request):
     return render(request, 'dashboard.html')
@@ -27,9 +31,7 @@ def dashboard_data(request):
     })
 
 
-from rest_framework import viewsets
-from .models import Movie
-from .serializers import MovieSerializer
+
 
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
@@ -37,7 +39,6 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 
-from django.shortcuts import render
 
 def home(request):
-    return render(request, 'home.html')
+    return HttpResponse("Hello from Movie Hub 👋")

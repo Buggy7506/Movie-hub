@@ -11,7 +11,7 @@
             <img src="{{ movie.poster.url }}" width="150" />
             <p>{{ movie.description|slice:":150" }}...</p>
             <p>Rating: {{ movie.rating }}/10</p>
-            🎭<a href="{{ movie.trailer_url }}" target="_blank">Watch Trailer</a>
+            <a href="{{ movie.trailer_url }}" target="_blank">Watch Trailer</a>
         </div>
     {% endfor %}
 </body>

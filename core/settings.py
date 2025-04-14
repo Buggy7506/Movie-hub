@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +28,6 @@ SECRET_KEY = 'django-insecure-yj*re#i7cpl!-ccu#w6mqib)x_w5f(^*87_l^x9dyumz0(wu_w
 DEBUG = False
 
 ALLOWED_HOSTS = ['movie-hub-te7a.onrender.com', '127.0.0.1', 'localhost']
-
 
 
 
@@ -123,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-import os
+
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -149,7 +150,7 @@ LOGIN_REDIRECT_URL = '/'
 
 
 
-import dj_database_url
+
 
 DATABASES = {
     'default': dj_database_url.config(
