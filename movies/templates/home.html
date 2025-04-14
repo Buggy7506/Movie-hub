@@ -3,6 +3,9 @@
 <head>
     <title>🎬 Movie Hub</title>
 </head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 <body>
     <h1>Welcome to Movie Hub</h1>
     {% for movie in movies %}
