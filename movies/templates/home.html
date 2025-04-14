@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎬 Movie Hub</title>
+</head>
+<body>
+    <h1>Welcome to Movie Hub</h1>
+    {% for movie in movies %}
+        <div style="margin-bottom: 20px;">
+            <h2>{{ movie.title }}</h2>
+            <img src="{{ movie.poster.url }}" width="150" />
+            <p>{{ movie.description|slice:":150" }}...</p>
+            <p>Rating: {{ movie.rating }}/10</p>
+            🎭<a href="{{ movie.trailer_url }}" target="_blank">Watch Trailer</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

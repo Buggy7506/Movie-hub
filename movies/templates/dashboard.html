@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🎬 Movie Hub Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        canvas {
+            margin: 20px 0;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Movie Hub Dashboard</h1>
+
+    <!-- Pie Chart: Movies Per Genre -->
+    <h3>🎭 Movies by Genre</h3>
+    <canvas id="genreChart"></canvas>
+
+    <!-- Bar Chart: Top Rated Movies -->
+    <h3>⭐ Top Rated Movies</h3>
+    <canvas id="topRatedChart"></canvas>
+
+    <script>
+        fetch("/dashboard-data/")
+        .then(response => response.json())
+        .then(data => {
+            // 🎭 Genre Pie Chart
+            const genreCtx = document.getElementById('genreChart').getContext('2d');
+            new Chart(genreCtx, {
+                type: 'pie',
+                data: {
+                    labels: data.genres.map(g => g.name),
+                    datasets: [{
+                        label: 'Movies per Genre',
+                        data: data.genres.map(g => g.count),
+                        backgroundColor: [
+                            '#3498db', '#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6',
+                            '#1abc9c', '#e67e22', '#34495e', '#95a5a6', '#ff6f61'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        }
+                    }
+                }
+            });
+
+            // ⭐ Top Rated Bar Chart
+            const topCtx = document.getElementById('topRatedChart').getContext('2d');
+            new Chart(topCtx, {
+                type: 'bar',
+                data: {
+                    labels: data.top_movies.map(m => m.title),
+                    datasets: [{
+                        label: 'Rating',
+                        data: data.top_movies.map(m => m.rating),
+                        backgroundColor: '#1abc9c'
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10
+                        }
+                    },
+                    responsive: true,
+                }
+            });
+        });
+    </script>
+</body>
+</html>
