@@ -12,9 +12,9 @@ from .models import Genre, Movie
 from django.db.models import Count
 from django.http import HttpResponse
 
-def home(request):
+def base(request):
     movies = Movie.objects.all()
-    return render(request, 'home.html', {'movies': movies})
+    return render(request, 'base.html', {'movies': movies})
 
 
 
@@ -39,6 +39,3 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 
-
-def home(request):
-    return HttpResponse("Hello from Movie Hub 👋")
