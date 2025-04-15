@@ -12,9 +12,9 @@ from .models import Genre, Movie
 from django.db.models import Count
 from django.http import HttpResponse
 
-def base(request):
+def home(request):
     movies = Movie.objects.all()
-    return render(request, 'base.html', {'movies': movies})
+    return render(request, 'home.html', {'movies': movies})
 
 
 
