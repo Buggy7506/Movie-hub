@@ -10,7 +10,7 @@ router.register(r'movies', MovieViewSet)
 
 
 urlpatterns = [
-    path('home/', views.home, name='home'),
+    path('base/', views.home, name='base'),
     path('dashboard/', views.dashboard_page, name='dashboard'),
     path('dashboard-data/', views.dashboard_data, name='dashboard_data'),
     path('api/', include(router.urls)),
