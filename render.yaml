@@ -2,6 +2,12 @@ services:
   - type: web
     name: movie-hub
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn core.wsgi:application"
     staticPublishPath: staticfiles
+    staticBuildCommand: "python manage.py collectstatic --noinput"
+    staticFiles:
+        - source: staticfiles
+          destination: /static
+          
